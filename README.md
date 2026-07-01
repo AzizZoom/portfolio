@@ -26,16 +26,6 @@ Rather than relying on massive component libraries, this single-page app is engi
 
 ---
 
-## 🚀 Local Development Deployment
-
-To spin up a local hot-reloading development server on your machine, clone this repository and execute the following scripts sequentially inside your terminal:
-
 ```bash
-# 1. Pull down and compile project dependencies
-npm install
-
-# 2. Fire up the local development engine
-npm start
-
 © 2026 | Built by Aziz (Template by Jacobo Martínez)
 Visit Jacobo at https://github.com/cobidev
