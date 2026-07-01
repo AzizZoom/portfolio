@@ -25,6 +25,13 @@
 
     &__text {
       margin-bottom: 2.5rem;
+
+      .contact-wrapper__break {
+        @media (max-width: 46.875em) {
+          // 750px
+          display: none;
+        }
+      }
     }
 
     &__text,

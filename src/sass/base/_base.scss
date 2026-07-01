@@ -6,7 +6,72 @@ html {
   }
 }
 
+// Root Theme Tokens and Smooth Transition Matrix
 body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  background-color: var(--bg-color, #ffffff);
+  color: var(--text-color, #333333);
+  transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.4s ease;
+  
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+// Add smooth transitions across key structural frames for an elegant theme switch experience
+section, #hero, #projects, #about, #contact, .footer {
+  transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.4s ease;
+}
+
+// Master System Theme Toggle Button Styles
+#theme-toggle {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  
+  // CRITICAL: Aligned to remain bright white text and border because it sits 
+  // on a dark backdrop inside the footer in BOTH light and dark themes!
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  
+  &:hover {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+  }
+}
+
+// Global Dark Mode Theme Class Cascade Override
+body.dark-theme {
+  --bg-color: #121212;         // Premium OLED matte black
+  --text-color: #f5f5f5;       // Soft eggshell white to prevent eye strain
+
+  // Invert ONLY the canvas surfaces that were originally white/light gray.
+  // We explicitly bypass #about and #contact so they retain their iconic highlighted green themes!
+  section:not(#about):not(#contact), #hero, #projects {
+    background-color: #121212 !important;
+    background: #121212 !important;
+    color: #f5f5f5 !important;
+  }
+
+  // Swap typography channels ONLY within the newly blackened layout sections.
+  // This shields your green sections, keeping their native text elements beautifully readable.
+  #hero, #projects {
+    h1, h2, h3, h4, p, span, li, i:not(.fa-inverse) {
+      color: #f5f5f5 !important;
+    }
+  }
+
+  // Keep project descriptive text containers readable against the black background
+  .project-wrapper__text {
+    color: #f5f5f5 !important;
+    
+    .project-wrapper__text-title {
+      color: #f5f5f5 !important;
+    }
+  }
 }
