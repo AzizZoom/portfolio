@@ -1,27 +1,29 @@
 {
   "name": "simplefolio",
   "version": "1.0.1",
-  "private": "true",
+  "private": true,
   "description": "A clean, beautiful and responsive portfolio template for Developers!",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "gh-pages-build": "parcel build --public-url ."
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cobidev/simplefolio"
   },
   "keywords": [],
-  "author": "Jacobo Martinez",
+  "author": "Aziz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cobidev/simplefolio/issues"
   },
-  "homepage": "https://github.com/cobidev/simplefolio#readme",
+  "homepage": "https://azizzoom.github.io/portfolio",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.16.4",
     "prettier": "^2.7.1"
   },
